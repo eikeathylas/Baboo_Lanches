@@ -41,7 +41,7 @@
 
         var div = document.createElement('div')
         var titulo = document.createElement('h3')
-        div.className = 'box2'
+        div.className = 'box1'
         titulo.innerHTML = defaults.ordem[0]
         div.appendChild(titulo)
         for (var i in data) {
@@ -161,7 +161,7 @@
 
         var div = document.createElement('div')
         var titulo = document.createElement('h3')
-        div.className = 'box1'
+        div.className = 'box2'
         titulo.innerHTML = defaults.ordem[3]
         div.appendChild(titulo)
         for (var i in data) {
@@ -241,7 +241,7 @@
 
         var div = document.createElement('div')
         var titulo = document.createElement('h3')
-        div.className = 'box1'
+        div.className = 'box2'
         titulo.innerHTML = defaults.ordem[5]
         div.appendChild(titulo)
         for (var i in data) {
@@ -323,7 +323,7 @@
 
         var div = document.createElement('div')
         var titulo = document.createElement('h3')
-        div.className = 'box1'
+        div.className = 'box2'
         titulo.innerHTML = defaults.ordem[7]
         div.appendChild(titulo)
         for (var i in data) {
@@ -364,7 +364,7 @@
 
         var div = document.createElement('div')
         var titulo = document.createElement('h3')
-        div.className = 'box1'
+        div.className = 'box2'
         titulo.innerHTML = defaults.ordem[8]
         div.appendChild(titulo)
         for (var i in data) {
@@ -414,10 +414,10 @@
             settings.body.classList.toggle('dark')
 
             if (settings.body.className == 'dark') {
-                settings.logo.src = 'img/Eat Fast - Preto.png'
+                // settings.logo.src = 'img/Eat Fast - Preto.png'
                 localStorage.setItem('mode', true)
             } else {
-                settings.logo.src = 'img/Eat Fast - Branco.png'
+                // settings.logo.src = 'img/Eat Fast - Branco.png'
                 localStorage.setItem('mode', false)
             }
 

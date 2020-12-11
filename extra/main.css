@@ -35,16 +35,16 @@ p {
 }
 
 .box1 {
-    border: 5px double #ff0000;
-    background: #1A1A1A;
+    border: 5px double #E1CD34;
+    background: #007b48;
     color: #FFFFFF;
     margin-top: 35px;
     margin-bottom: 35px;
 }
 
 .box2 {
-    border: 5px double #ffffff;
-    background: #ff0000;
+    border: 5px double #E1CD34;
+    background: #7b0000;
     color: #FFFFFF;
     margin-top: 35px;
     margin-bottom: 35px;
@@ -56,9 +56,9 @@ p {
 }
 
 .logo {
-    margin-top: 35px;
+    margin-top: 45px;
     margin-bottom: 60px;
-    height: 350px;
+    height: 250px;
 }
 
 .btn-theme {

@@ -364,7 +364,7 @@
 
         var div = document.createElement('div')
         var titulo = document.createElement('h3')
-        div.className = 'box2'
+        div.className = 'box1'
         titulo.innerHTML = defaults.ordem[8]
         div.appendChild(titulo)
         for (var i in data) {

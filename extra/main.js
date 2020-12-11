@@ -46,7 +46,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[0]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -86,7 +86,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[1]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -126,7 +126,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[2]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -166,7 +166,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[3]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -206,7 +206,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[4]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -246,7 +246,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[5]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -287,7 +287,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[6]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -328,7 +328,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[7]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')
@@ -369,7 +369,7 @@
         div.appendChild(titulo)
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[8]) {
-                if (data[i]["status"] == "s") {
+                if (data[i]["status"]) {
                     var product = document.createElement('p')
                     var price = document.createElement('b')
                     var hr = document.createElement('hr')

@@ -30,7 +30,6 @@
     }
 
     const constructLayout = () => {
-
         var xhr = new XMLHttpRequest()
         xhr.open("POST", 'https://script.google.com/macros/s/AKfycbz8x1mey__kG82X9emiUbfB3DqQkiQjAAMzUzrQ16tMyHGw6I6F/exec', false)
         xhr.send(JSON.stringify({
@@ -47,30 +46,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[0]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -87,30 +133,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[1]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -127,30 +220,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[2]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -167,30 +307,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[3]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -207,30 +394,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[4]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -247,30 +481,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[5]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -288,30 +569,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[6]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -329,30 +657,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[7]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }
@@ -370,30 +745,77 @@
         for (var i in data) {
             if (data[i]["category"] == defaults.ordem[8]) {
                 if (data[i]["status"]) {
-                    var product = document.createElement('p')
-                    var price = document.createElement('b')
-                    var hr = document.createElement('hr')
-                    price.className = 'float-right'
+                    if (data[i]["photo"] != "") {
+                        var div2 = document.createElement('div')
+                        var div3 = document.createElement('div')
+                        var div4 = document.createElement('div')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        var img = document.createElement('img')
 
-                    if (data[i]["desc"] != "") {
-                        var desc = document.createElement('p')
-                        desc.className = 'desc'
+                        div2.className = 'row align-items-center'
+                        div3.className = 'col'
+                        div4.className = 'col-auto'
+                        price.className = 'float-right'
+                        img.className = 'img-product'
 
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
-                        desc.innerHTML = data[i]["desc"]
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(desc)
-                        div.appendChild(hr)
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div3.appendChild(desc)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            img.src = data[i]["photo"]
+
+                            div3.appendChild(price)
+                            div3.appendChild(product)
+                            div4.appendChild(img)
+                            div2.appendChild(div3)
+                            div2.appendChild(div4)
+                            div.appendChild(div2)
+                            div.appendChild(hr)
+                        }
                     } else {
-                        product.innerHTML = data[i]["product"]
-                        price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                        var product = document.createElement('p')
+                        var price = document.createElement('b')
+                        var hr = document.createElement('hr')
+                        price.className = 'float-right'
 
-                        product.appendChild(price)
-                        div.appendChild(product)
-                        div.appendChild(hr)
+                        if (data[i]["desc"] != "") {
+                            var desc = document.createElement('p')
+                            desc.className = 'desc'
+
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+                            desc.innerHTML = data[i]["desc"]
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(desc)
+                            div.appendChild(hr)
+                        } else {
+                            product.innerHTML = data[i]["product"]
+                            price.innerHTML = 'R$ ' + data[i]["price"].toFixed(2).replace('.', ',')
+
+                            product.appendChild(price)
+                            div.appendChild(product)
+                            div.appendChild(hr)
+                        }
                     }
 
                 }

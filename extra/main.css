@@ -35,6 +35,7 @@ p {
 }
 
 .box1 {
+    border-radius: 10px;
     border: 5px double #E1CD34;
     background: #007b48;
     color: #FFFFFF;
@@ -43,6 +44,7 @@ p {
 }
 
 .box2 {
+    border-radius: 10px;
     border: 5px double #E1CD34;
     background: #7b0000;
     color: #FFFFFF;
@@ -83,6 +85,15 @@ p {
     font-size: 13px;
     font-style: italic;
     font-weight: 800;
+}
+
+.img-product {
+    border-radius: 20px;
+    margin: 15px;
+    height: 80px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .dark {
